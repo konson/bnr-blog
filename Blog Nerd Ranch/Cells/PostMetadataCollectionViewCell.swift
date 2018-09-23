@@ -15,6 +15,7 @@ class PostMetadataCollectionViewCell: UICollectionViewCell {
     @IBOutlet var publishDateLabel: UILabel!
     @IBOutlet var summaryLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var authorTitleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

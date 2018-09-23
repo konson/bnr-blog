@@ -126,6 +126,7 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
         cell.publishDateLabel.text = publishDateString
         cell.summaryLabel.text = metadataum.summary
         cell.authorNameLabel.text = metadataum.author.name
+        cell.authorTitleLabel.text = metadataum.author.title
     
         return cell
     }
