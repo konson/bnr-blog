@@ -18,7 +18,8 @@ enum MetadataError : Error {
 class PostMetadataCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var server = Servers.mock
     var downloadTask : URLSessionTask?
-    var orderingController = PostMetadataOrderingController(ordering: DisplayOrdering(grouping:.none, sorting: .byPublishDate(recentFirst: false)))
+//    var orderingController = PostMetadataOrderingController(ordering: DisplayOrdering(grouping: .none, sorting: .byPublishDate(recentFirst: true)))
+    var orderingController = PostMetadataOrderingController(ordering: DisplayOrdering(grouping: .none, sorting: .alphabeticalByAuthor(ascending: true)))
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     fileprivate let itemsPerRow: CGFloat = 1
@@ -27,9 +28,7 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
         super.viewDidLoad()
 
         // Register cell classes
-        //self.collectionView!.register(PostMetadataCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView!.register(UINib(nibName: "PostMetadataCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-
 
         // Do any additional setup after loading the view.
         title = "Blog Nerd Ranch"
@@ -192,12 +191,9 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
-        let availableHeight = view.frame.height
         let widthPerItem = availableWidth / itemsPerRow
-//        let heightPerItem = availableHeight
 
         return CGSize(width: widthPerItem, height: 270)
-        //return CGSize(width: 300, height: 200)
     }
     
     // MARK: - Data methods
@@ -238,44 +234,6 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
         downloadTask = task
         
     }
-    
-//    func fetchPostMetadataID(id: String) {
-//        let url = server.postMetadataUrlFor(id: id)
-//        
-//        if downloadTask?.progress.isCancellable ?? false {
-//            downloadTask?.cancel()
-//        }
-//        let task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
-//            guard error == nil else {
-//                self?.displayError(error: error!)
-//                return
-//            }
-//            guard let data = data else {
-//                self?.displayError(error: MetadataError.missingData)
-//                return
-//            }
-//            let metadataList : [PostMetadata]?
-//            let decoder = JSONDecoder();
-//            decoder.dateDecodingStrategy = .iso8601
-//            do {
-//                metadataList = try decoder.decode(Array.self, from: data)
-//            } catch {
-//                self?.displayError(error: error)
-//                return
-//            }
-//            
-//            if let list = metadataList {
-//                self?.orderingController.postMetadataList = list
-//            }
-//            
-//            DispatchQueue.main.async {
-//                self?.collectionView?.reloadData()
-//            }
-//        }
-//        task.resume()
-//        downloadTask = task
-//        
-//    }
     
     func displayError(error: Error) {
         print("Error: \(error.localizedDescription)")
