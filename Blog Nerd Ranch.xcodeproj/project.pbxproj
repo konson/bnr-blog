@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512490AD215840CA00BEEA3B /* PostHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512490AC215840CA00BEEA3B /* PostHeaderReusableView.swift */; };
 		51489B4821576C3400DA036F /* UIColorExtension+BNR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51489B4721576C3400DA036F /* UIColorExtension+BNR.swift */; };
 		515D796E2157198700278C98 /* PostMetadataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 515D796D2157198700278C98 /* PostMetadataCollectionViewCell.xib */; };
 		836E38D32139A918005B928C /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E38D22139A918005B928C /* Server.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		512490AC215840CA00BEEA3B /* PostHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderReusableView.swift; sourceTree = "<group>"; };
 		51489B4721576C3400DA036F /* UIColorExtension+BNR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColorExtension+BNR.swift"; sourceTree = "<group>"; };
 		515D796D2157198700278C98 /* PostMetadataCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostMetadataCollectionViewCell.xib; sourceTree = "<group>"; };
 		836E38D22139A918005B928C /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				83B00AFD2135A4C8000C70F9 /* PostMetadataCollectionViewCell.swift */,
 				515D796D2157198700278C98 /* PostMetadataCollectionViewCell.xib */,
+				512490AC215840CA00BEEA3B /* PostHeaderReusableView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			files = (
 				836E38D32139A918005B928C /* Server.swift in Sources */,
 				83C918EB213E131300FD6F83 /* PostMetadataOrderingController.swift in Sources */,
+				512490AD215840CA00BEEA3B /* PostHeaderReusableView.swift in Sources */,
 				83B00B00213606BC000C70F9 /* PostViewController.swift in Sources */,
 				83B00ACA21359CFF000C70F9 /* AppDelegate.swift in Sources */,
 				83B00B0521362224000C70F9 /* PostMetadata.swift in Sources */,

@@ -135,6 +135,16 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
     }
 
     // MARK: UICollectionViewDelegate
+    override func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                     withReuseIdentifier: "PostHeaderReusableView",
+                                                                     for: indexPath) as! PostHeaderReusableView
+        header.sectionHeaderLabel.text = orderingController.groups[indexPath.section].name ?? "Posts"
+
+        return header
+    }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let postMetadata = orderingController.groups[indexPath.section].postMetadata[indexPath.item]
         

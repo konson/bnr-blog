@@ -27,18 +27,9 @@ class PostMetadataOrderingController {
     var groups : [PostMetadataGroup] {
         // TODO: Group & Order the posts according to the `ordering` value.
         print("\(self.ordering.debugDescription)")
-        
-//        var groupArray = [[PostMetadata]]()
-//        if ordering.grouping == .byAuthor {
-//            for post in postMetadataList {
-//
-//
-//            // let filteredPosts = postMetadataList.filter({$0.author.name == })
-//            }
-//        }
+
         var dictionary = Dictionary<String, [PostMetadata]>()
         var postMetadataGroupArray = [PostMetadataGroup]()
-        let groupName: String
         switch ordering.grouping {
         case .byAuthor:
             let predicate = { (element: PostMetadata) in
@@ -79,15 +70,7 @@ class PostMetadataOrderingController {
         case .byPublishDate(let recentFirst):
             sortedList = recentFirst ? self.postMetadataList.sorted() { $0.publishDate > $1.publishDate } : self.postMetadataList.sorted() { $0.publishDate < $1.publishDate }
         }
-//        let sortedByTitleAscendingList = self.postMetadataList.sorted() { $0.title < $1.title }
-//        let sortedByTitleDescendingList = self.postMetadataList.sorted() { $0.title > $1.title }
-//        let sortedByDateAscendingList = self.postMetadataList.sorted() { $0.publishDate < $1.publishDate }
-//        let sortedByDateDescendingList = self.postMetadataList.sorted() { $0.publishDate > $1.publishDate }
-//        let sortedByAuthorNameAscendingList = self.postMetadataList.sorted() { $0.author.name < $1.author.name }
-//        let sortedByAuthorNameDescendingList = self.postMetadataList.sorted() { $0.author.name > $1.author.name }
 
-        //return sortedByAuthorList
-        print(sortedList)
         //return [PostMetadataGroup(name: nil, postMetadata: sortedList)]
         return postMetadataGroupArray.isEmpty ? [PostMetadataGroup(name: nil, postMetadata: sortedList)] : postMetadataGroupArray
 
