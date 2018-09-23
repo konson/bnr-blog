@@ -120,13 +120,15 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, yyyy"
         let publishDateString = dateFormatter.string(from: metadataum.publishDate as Date)
-        
+        let url = server.postMetadataImageUrlFor(imageUrlString: metadataum.author.image)
         // Configure the cell
         cell.titleLabel.text = metadataum.title
         cell.publishDateLabel.text = publishDateString
         cell.summaryLabel.text = metadataum.summary
         cell.authorNameLabel.text = metadataum.author.name
         cell.authorTitleLabel.text = metadataum.author.title
+        cell.imageURL = url
+        cell.setAuthorImage()
     
         return cell
     }
@@ -237,7 +239,46 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
         
     }
     
+//    func fetchPostMetadataID(id: String) {
+//        let url = server.postMetadataUrlFor(id: id)
+//        
+//        if downloadTask?.progress.isCancellable ?? false {
+//            downloadTask?.cancel()
+//        }
+//        let task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+//            guard error == nil else {
+//                self?.displayError(error: error!)
+//                return
+//            }
+//            guard let data = data else {
+//                self?.displayError(error: MetadataError.missingData)
+//                return
+//            }
+//            let metadataList : [PostMetadata]?
+//            let decoder = JSONDecoder();
+//            decoder.dateDecodingStrategy = .iso8601
+//            do {
+//                metadataList = try decoder.decode(Array.self, from: data)
+//            } catch {
+//                self?.displayError(error: error)
+//                return
+//            }
+//            
+//            if let list = metadataList {
+//                self?.orderingController.postMetadataList = list
+//            }
+//            
+//            DispatchQueue.main.async {
+//                self?.collectionView?.reloadData()
+//            }
+//        }
+//        task.resume()
+//        downloadTask = task
+//        
+//    }
+    
     func displayError(error: Error) {
         print("Error: \(error.localizedDescription)")
     }
+    
 }

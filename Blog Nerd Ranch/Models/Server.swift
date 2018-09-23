@@ -27,6 +27,10 @@ struct Server {
         return host.appendingPathComponent("/post-metadata/\(id)")
     }
     
+    func postMetadataImageUrlFor(imageUrlString: String) -> URL {
+        return host.appendingPathComponent("\(imageUrlString)")
+    }
+    
     /// URL to get data for all posts
     var allPostsUrl : URL {
         return host.appendingPathComponent("/post")
