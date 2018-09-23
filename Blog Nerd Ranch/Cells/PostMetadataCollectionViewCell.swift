@@ -44,6 +44,9 @@ class PostMetadataCollectionViewCell: UICollectionViewCell {
         summaryLabel.accessibilityLabel = "Post Summary"
         authorTitleLabel.accessibilityLabel = "Author Title"
         
+        // Format round image view
+        imageView.layer.borderWidth = 2
+        imageView.layer.borderColor = UIColor.lightestGray.cgColor
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = imageView.frame.height/2
         imageView.clipsToBounds = true

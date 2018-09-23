@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51489B4821576C3400DA036F /* UIColorExtension+BNR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51489B4721576C3400DA036F /* UIColorExtension+BNR.swift */; };
 		515D796E2157198700278C98 /* PostMetadataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 515D796D2157198700278C98 /* PostMetadataCollectionViewCell.xib */; };
 		836E38D32139A918005B928C /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E38D22139A918005B928C /* Server.swift */; };
 		836E38D42139A918005B928C /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E38D22139A918005B928C /* Server.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51489B4721576C3400DA036F /* UIColorExtension+BNR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColorExtension+BNR.swift"; sourceTree = "<group>"; };
 		515D796D2157198700278C98 /* PostMetadataCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostMetadataCollectionViewCell.xib; sourceTree = "<group>"; };
 		836E38D22139A918005B928C /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		83B00AC621359CFF000C70F9 /* Blog Nerd Ranch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blog Nerd Ranch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51489B4921576C4000DA036F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				51489B4721576C3400DA036F /* UIColorExtension+BNR.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		83B00ABD21359CFF000C70F9 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 				83B00B01213621B1000C70F9 /* Models */,
 				83B00AC921359CFF000C70F9 /* AppDelegate.swift */,
 				83B00ACD21359CFF000C70F9 /* Main.storyboard */,
+				51489B4921576C4000DA036F /* Utilities */,
 				83B00AD021359D00000C70F9 /* Assets.xcassets */,
 				83B00AD221359D00000C70F9 /* LaunchScreen.storyboard */,
 				83B00AD521359D00000C70F9 /* Info.plist */,
@@ -318,6 +329,7 @@
 				83C918E9213DDBD100FD6F83 /* DisplayOrdering.swift in Sources */,
 				83B00AFC21359FE1000C70F9 /* PostMetadataCollectionViewController.swift in Sources */,
 				83B00AFE2135A4C8000C70F9 /* PostMetadataCollectionViewCell.swift in Sources */,
+				51489B4821576C3400DA036F /* UIColorExtension+BNR.swift in Sources */,
 				83B00B03213621EE000C70F9 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
