@@ -32,7 +32,7 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
 
 
         // Do any additional setup after loading the view.
-        title = "Blog Posts"
+        title = "Blog Nerd Ranch"
         fetchPostMetadata()
     }
     
@@ -117,8 +117,15 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
         let group = orderingController.groups[indexPath.section]
         let metadataum = group.postMetadata[group.postMetadata.startIndex.advanced(by: indexPath.item)]
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        let publishDateString = dateFormatter.string(from: metadataum.publishDate as Date)
+        
         // Configure the cell
         cell.titleLabel.text = metadataum.title
+        cell.publishDateLabel.text = publishDateString
+        cell.summaryLabel.text = metadataum.summary
+        cell.authorNameLabel.text = metadataum.author.name
     
         return cell
     }

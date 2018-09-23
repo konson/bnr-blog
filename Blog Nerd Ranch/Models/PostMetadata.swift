@@ -11,5 +11,13 @@ import Foundation
 struct PostMetadata : Codable {
     let title : String
     let publishDate : Date
+    let author: Author
+    let summary: String
     let postId : String
+}
+
+struct Author : Codable {
+    let name : String
+    let image : String
+    let title : String
 }

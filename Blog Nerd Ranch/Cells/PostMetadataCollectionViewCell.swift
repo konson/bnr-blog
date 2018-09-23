@@ -23,20 +23,14 @@ class PostMetadataCollectionViewCell: UICollectionViewCell {
     }
 
     func configure() {
+        
+        // TODO: copy this logic for all fields
         titleLabel.isAccessibilityElement = true
         titleLabel.accessibilityTraits = UIAccessibilityTraitStaticText
         titleLabel.accessibilityLabel = "Post Title"
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.numberOfLines = 0
 
-
-        
-        //TODO: remove
-//        authorNameLabel.text = "Earnest Hemmingway"
-//        publishDateLabel.text = "Sept 22, 2018"
-//        summaryLabel.text = 
-    
-        
         // Style the content view to match website style
         contentView.backgroundColor = .white
         contentView.layer.cornerRadius = 5;
