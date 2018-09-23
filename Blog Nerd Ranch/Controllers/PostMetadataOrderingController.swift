@@ -24,41 +24,22 @@ class PostMetadataOrderingController {
         self.postMetadataList = postMetadata
     }
     
+    //TODO: Refactor, cleanup, and fix this!
     var groups : [PostMetadataGroup] {
-        // TODO: Group & Order the posts according to the `ordering` value.
+
         print("\(self.ordering.debugDescription)")
 
         var dictionary = Dictionary<String, [PostMetadata]>()
         var postMetadataGroupArray = [PostMetadataGroup]()
+        
         switch ordering.grouping {
         case .byAuthor:
-            let predicate = { (element: PostMetadata) in
-                return element.author.name
-            }
-            dictionary = Dictionary(grouping: postMetadataList, by: predicate)
-            
-            for (key, value) in dictionary {
-                postMetadataGroupArray.append(PostMetadataGroup(name: key, postMetadata: value))
-            }
-            
+            dictionary = Dictionary(grouping: postMetadataList, by: { (post: PostMetadata) in return post.author.name })
         case .byMonth:
-            
-            let predicate = { (element: PostMetadata) in
-                return element.month
-            }
-            dictionary = Dictionary(grouping: postMetadataList, by: predicate)
-            
-            for (key, value) in dictionary {
-
-                postMetadataGroupArray.append(PostMetadataGroup(name: key, postMetadata: value))
-            }
-            
+            dictionary = Dictionary(grouping: postMetadataList, by: { (post: PostMetadata) in return post.month })
         case .none:
             print("none!")
         }
-        
-
-        
         
         // set the sorting array
         var sortedList: [PostMetadata] = []
@@ -70,8 +51,12 @@ class PostMetadataOrderingController {
         case .byPublishDate(let recentFirst):
             sortedList = recentFirst ? self.postMetadataList.sorted() { $0.publishDate > $1.publishDate } : self.postMetadataList.sorted() { $0.publishDate < $1.publishDate }
         }
+        
+        for (key, value) in dictionary {
+            postMetadataGroupArray.append(PostMetadataGroup(name: key, postMetadata: value))
+        }
 
-        //return [PostMetadataGroup(name: nil, postMetadata: sortedList)]
+        //TODO: Fix this so grouping and sorting work together
         return postMetadataGroupArray.isEmpty ? [PostMetadataGroup(name: nil, postMetadata: sortedList)] : postMetadataGroupArray
 
     }
