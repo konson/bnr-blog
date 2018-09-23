@@ -19,7 +19,6 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
     var server = Servers.mock
     var downloadTask : URLSessionTask?
     var orderingController = PostMetadataOrderingController(ordering: DisplayOrdering(grouping: .none, sorting: .byPublishDate(recentFirst: true)))
-//    var orderingController = PostMetadataOrderingController(ordering: DisplayOrdering(grouping: .none, sorting: .alphabeticalByAuthor(ascending: true)))
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     fileprivate let itemsPerRow: CGFloat = 1
@@ -141,6 +140,7 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
         
         let url = server.allPostsUrl
 
+        //TODO: optimize this...
         // Get all posts, filter to the selected post, and then show it
         // Is there a better way to do this?
         if downloadTask?.progress.isCancellable ?? false {

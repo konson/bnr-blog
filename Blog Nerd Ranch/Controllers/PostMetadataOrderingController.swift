@@ -28,7 +28,30 @@ class PostMetadataOrderingController {
         // TODO: Group & Order the posts according to the `ordering` value.
         print("\(self.ordering.debugDescription)")
         
-//        if ordering.grouping == .none {
+//        var groupArray = [[PostMetadata]]()
+//        if ordering.grouping == .byAuthor {
+//            for post in postMetadataList {
+//
+//
+//            // let filteredPosts = postMetadataList.filter({$0.author.name == })
+//            }
+//        }
+        var dictionary = Dictionary<String, [PostMetadata]>()
+        var arr = [PostMetadataGroup]()
+        if ordering.grouping == .byAuthor {
+            let predicate = { (element: PostMetadata) in
+                return element.author.name
+            }
+            
+            dictionary = Dictionary(grouping: postMetadataList, by: predicate)
+ 
+            for (key, value) in dictionary {
+                arr.append(PostMetadataGroup(name: key, postMetadata: value))
+            }
+            //PostMetadataGroup(name: nil, postMetadata: sortedList)
+            print(arr)
+        }
+        
         
         // set the sorting array
         var sortedList: [PostMetadata] = []
@@ -49,6 +72,8 @@ class PostMetadataOrderingController {
 
         //return sortedByAuthorList
         print(sortedList)
-        return [PostMetadataGroup(name: nil, postMetadata: sortedList)]
+        //return [PostMetadataGroup(name: nil, postMetadata: sortedList)]
+        return arr.isEmpty ? [PostMetadataGroup(name: nil, postMetadata: sortedList)] : arr
+
     }
 }
