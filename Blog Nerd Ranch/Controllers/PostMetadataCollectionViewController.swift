@@ -18,8 +18,8 @@ enum MetadataError : Error {
 class PostMetadataCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var server = Servers.mock
     var downloadTask : URLSessionTask?
-//    var orderingController = PostMetadataOrderingController(ordering: DisplayOrdering(grouping: .none, sorting: .byPublishDate(recentFirst: true)))
-    var orderingController = PostMetadataOrderingController(ordering: DisplayOrdering(grouping: .none, sorting: .alphabeticalByAuthor(ascending: true)))
+    var orderingController = PostMetadataOrderingController(ordering: DisplayOrdering(grouping: .none, sorting: .byPublishDate(recentFirst: true)))
+//    var orderingController = PostMetadataOrderingController(ordering: DisplayOrdering(grouping: .none, sorting: .alphabeticalByAuthor(ascending: true)))
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     fileprivate let itemsPerRow: CGFloat = 1
@@ -95,11 +95,13 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
     func update(grouping: Grouping) {
         let oldSorting = orderingController.ordering.sorting
         orderingController.ordering = DisplayOrdering(grouping: grouping, sorting: oldSorting)
+        collectionView?.reloadData()
     }
     
     func update(sorting: Sorting) {
         let oldGrouping = orderingController.ordering.grouping
         orderingController.ordering = DisplayOrdering(grouping: oldGrouping, sorting: sorting)
+        collectionView?.reloadData()
     }
     
     // MARK: UICollectionViewDataSource
@@ -115,11 +117,12 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PostMetadataCollectionViewCell
         let group = orderingController.groups[indexPath.section]
         let metadataum = group.postMetadata[group.postMetadata.startIndex.advanced(by: indexPath.item)]
+        let url = server.postMetadataImageUrlFor(imageUrlString: metadataum.author.image)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, yyyy"
         let publishDateString = dateFormatter.string(from: metadataum.publishDate as Date)
-        let url = server.postMetadataImageUrlFor(imageUrlString: metadataum.author.image)
+        
         // Configure the cell
         cell.titleLabel.text = metadataum.title
         cell.publishDateLabel.text = publishDateString
