@@ -37,20 +37,36 @@ class PostMetadataOrderingController {
 //            }
 //        }
         var dictionary = Dictionary<String, [PostMetadata]>()
-        var arr = [PostMetadataGroup]()
-        if ordering.grouping == .byAuthor {
+        var postMetadataGroupArray = [PostMetadataGroup]()
+        let groupName: String
+        switch ordering.grouping {
+        case .byAuthor:
             let predicate = { (element: PostMetadata) in
                 return element.author.name
             }
-            
             dictionary = Dictionary(grouping: postMetadataList, by: predicate)
- 
+            
             for (key, value) in dictionary {
-                arr.append(PostMetadataGroup(name: key, postMetadata: value))
+                postMetadataGroupArray.append(PostMetadataGroup(name: key, postMetadata: value))
             }
-            //PostMetadataGroup(name: nil, postMetadata: sortedList)
-            print(arr)
+            
+        case .byMonth:
+            
+            let predicate = { (element: PostMetadata) in
+                return element.month
+            }
+            dictionary = Dictionary(grouping: postMetadataList, by: predicate)
+            
+            for (key, value) in dictionary {
+
+                postMetadataGroupArray.append(PostMetadataGroup(name: key, postMetadata: value))
+            }
+            
+        case .none:
+            print("none!")
         }
+        
+
         
         
         // set the sorting array
@@ -73,7 +89,7 @@ class PostMetadataOrderingController {
         //return sortedByAuthorList
         print(sortedList)
         //return [PostMetadataGroup(name: nil, postMetadata: sortedList)]
-        return arr.isEmpty ? [PostMetadataGroup(name: nil, postMetadata: sortedList)] : arr
+        return postMetadataGroupArray.isEmpty ? [PostMetadataGroup(name: nil, postMetadata: sortedList)] : postMetadataGroupArray
 
     }
 }
