@@ -32,6 +32,8 @@ class PostViewController: UIViewController {
         }
         titleLabel.text = post.metadata.title;
         contentsLabel.text = post.body;
+        titleLabel.lineBreakMode = .byWordWrapping
+        titleLabel.numberOfLines = 0
     }
     
 }

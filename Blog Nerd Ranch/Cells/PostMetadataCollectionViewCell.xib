@@ -66,9 +66,9 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uX-zQ-KHd">
-                                <rect key="frame" x="0.0" y="169" width="535" height="61"/>
+                                <rect key="frame" x="0.0" y="169" width="535" height="64.5"/>
                                 <string key="text">Donec dictum ligula purus, ut suscipit arcu cursus ut. Aliquam auctor, nibh vel vehicula viverra, libero enim sodales dolor, ac auctor odio ligula id enim.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
