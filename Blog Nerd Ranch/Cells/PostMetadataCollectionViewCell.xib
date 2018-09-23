@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostMetadataCollectionViewCell" id="aTa-pP-nFR" customClass="PostMetadataCollectionViewCell" customModule="Blog_Nerd_Ranch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="551" height="288"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="551" height="288"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" restorationIdentifier="PostMetadataCollectionViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="SsC-c4-TzH">
+                        <rect key="frame" x="8" y="8" width="535" height="272"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title Could Be a Super Long One So Better Make It Two Lines" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDz-G2-7YS">
+                                <rect key="frame" x="0.0" y="0.0" width="535" height="63.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="genericProfile" translatesAutoresizingMaskIntoConstraints="NO" id="ZuE-pG-wp2">
+                                <rect key="frame" x="0.0" y="71" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="K4f-av-hci"/>
+                                    <constraint firstAttribute="height" constant="80" id="L0k-qh-tAT"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="CPJ-UH-0um" userLabel="Auth Stack View">
+                                <rect key="frame" x="88" y="111" width="439" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHe-DG-waX">
+                                        <rect key="frame" x="0.0" y="0.0" width="439" height="18"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sept 22, 2018" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0C-Tt-iFy">
+                                        <rect key="frame" x="0.0" y="22" width="439" height="18"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xL-pZ-tD9" userLabel="Line View">
+                                <rect key="frame" x="0.0" y="159" width="535" height="2"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="Pg4-N8-9MP"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uX-zQ-KHd">
+                                <rect key="frame" x="0.0" y="169" width="535" height="61"/>
+                                <string key="text">Donec dictum ligula purus, ut suscipit arcu cursus ut. Aliquam auctor, nibh vel vehicula viverra, libero enim sodales dolor, ac auctor odio ligula id enim.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="5xL-pZ-tD9" firstAttribute="leading" secondItem="SsC-c4-TzH" secondAttribute="leading" id="2pD-xY-ea2"/>
+                            <constraint firstItem="yDz-G2-7YS" firstAttribute="leading" secondItem="SsC-c4-TzH" secondAttribute="leading" id="6F3-yP-FzI"/>
+                            <constraint firstItem="CPJ-UH-0um" firstAttribute="leading" secondItem="ZuE-pG-wp2" secondAttribute="trailing" constant="8" id="F79-Fo-ocB"/>
+                            <constraint firstItem="5xL-pZ-tD9" firstAttribute="top" secondItem="ZuE-pG-wp2" secondAttribute="bottom" constant="8" id="NM3-MO-zad"/>
+                            <constraint firstItem="5xL-pZ-tD9" firstAttribute="bottom" secondItem="8uX-zQ-KHd" secondAttribute="top" constant="-8" id="SpX-Li-ZOp"/>
+                            <constraint firstItem="ZuE-pG-wp2" firstAttribute="top" secondItem="yDz-G2-7YS" secondAttribute="bottom" constant="8" id="WGH-kg-uY3"/>
+                            <constraint firstItem="8uX-zQ-KHd" firstAttribute="leading" secondItem="SsC-c4-TzH" secondAttribute="leading" id="Yzz-xq-BWq"/>
+                            <constraint firstAttribute="trailing" secondItem="8uX-zQ-KHd" secondAttribute="trailing" id="cU2-ze-jmy"/>
+                            <constraint firstAttribute="trailing" secondItem="CPJ-UH-0um" secondAttribute="trailing" constant="8" id="eri-Vz-0We"/>
+                            <constraint firstAttribute="trailing" secondItem="5xL-pZ-tD9" secondAttribute="trailing" id="hsa-IO-9tE"/>
+                            <constraint firstItem="yDz-G2-7YS" firstAttribute="width" secondItem="SsC-c4-TzH" secondAttribute="width" id="iu9-ok-joS"/>
+                            <constraint firstItem="yDz-G2-7YS" firstAttribute="top" secondItem="SsC-c4-TzH" secondAttribute="top" id="kb5-Yd-xVj"/>
+                            <constraint firstItem="CPJ-UH-0um" firstAttribute="bottom" secondItem="ZuE-pG-wp2" secondAttribute="bottom" id="ohl-cZ-c8H"/>
+                            <constraint firstItem="ZuE-pG-wp2" firstAttribute="leading" secondItem="SsC-c4-TzH" secondAttribute="leading" id="vSZ-fU-4A2"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="SsC-c4-TzH" firstAttribute="leading" secondItem="aTa-pP-nFR" secondAttribute="leading" constant="8" id="IOX-Pg-pAW"/>
+                <constraint firstAttribute="trailing" secondItem="SsC-c4-TzH" secondAttribute="trailing" constant="8" id="YLf-vO-UPK"/>
+                <constraint firstAttribute="bottom" secondItem="SsC-c4-TzH" secondAttribute="bottom" constant="8" id="aOI-UP-JBW"/>
+                <constraint firstItem="SsC-c4-TzH" firstAttribute="top" secondItem="aTa-pP-nFR" secondAttribute="top" constant="8" id="jjF-i2-KqU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="lrX-y2-36J"/>
+            <size key="customSize" width="551" height="288"/>
+            <connections>
+                <outlet property="authorNameLabel" destination="DHe-DG-waX" id="9K6-CN-756"/>
+                <outlet property="imageView" destination="ZuE-pG-wp2" id="d95-vE-kgC"/>
+                <outlet property="publishDateLabel" destination="i0C-Tt-iFy" id="zqM-eg-hTO"/>
+                <outlet property="summaryLabel" destination="8uX-zQ-KHd" id="gzq-Ie-nHP"/>
+                <outlet property="titleLabel" destination="yDz-G2-7YS" id="BGf-8b-Cxh"/>
+            </connections>
+            <point key="canvasLocation" x="52.5" y="15"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="genericProfile" width="300" height="300"/>
+    </resources>
+</document>
