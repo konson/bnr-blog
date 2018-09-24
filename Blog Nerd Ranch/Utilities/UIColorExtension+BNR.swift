@@ -31,22 +31,4 @@ extension UIColor {
             a: a
         )
     }
-    
-//    // based on
-//    // https://iosdevcenters.blogspot.com/2016/03/extension-for-hex-color-code-to-uicolor.html
-//    func hexToColor(hexString: String, alpha: CGFloat = 1.0) -> UIColor {
-//        let hexInt = Int(self.intFromHexString(hexString: hexString))
-//        let color = UIColor(hex: hexInt, a: alpha)
-//        return color
-//    }
-//    
-//    func intFromHexString(hexString: String) -> Int {
-//        var hexInt: UInt32 = 0
-//        let scanner: Scanner = Scanner(string: hexString)
-//        scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
-//        // Scan hex value - sets value via pointer, returns BOOL
-//        scanner.scanHexInt32(&hexInt)
-//        
-//        return Int(hexInt)
-//    }
 }

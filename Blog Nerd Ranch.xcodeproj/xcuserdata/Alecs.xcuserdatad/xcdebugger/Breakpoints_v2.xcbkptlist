@@ -6,16 +6,253 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
+            timestampString = "559506998.154525"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
-            timestampString = "559484298.296934"
+            timestampString = "559506998.154654"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "fetchPostMetadata()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
+            timestampString = "559506998.154744"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Blog_Nerd_Ranch.PostMetadataCollectionViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Blog Nerd Ranch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alecs/Desktop/BNR/bnr-blog-nerd-ranch-challenge-challenge/Blog%20Nerd%20Ranch/Controllers/PostMetadataCollectionViewController.swift"
+                  timestampString = "559505412.452029"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "1055">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Blog_Nerd_Ranch.PostMetadataCollectionViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Blog Nerd Ranch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alecs/Desktop/BNR/bnr-blog-nerd-ranch-challenge-challenge/Blog%20Nerd%20Ranch/Controllers/PostMetadataCollectionViewController.swift"
+                  timestampString = "559505412.453667"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "102">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blog Nerd Ranch/Controllers/PostMetadataOrderingController.swift"
+            timestampString = "559506998.154803"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "groups"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blog Nerd Ranch/Controllers/PostMetadataOrderingController.swift"
+            timestampString = "559506998.15487"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "groups"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
+            timestampString = "559506998.154934"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "update(grouping:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
+            timestampString = "559506998.154981"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "update(sorting:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
+            timestampString = "559506998.155035"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "PostMetadataCollectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Blog_Nerd_Ranch.PostMetadataCollectionViewController.orderingController.getter : Blog_Nerd_Ranch.PostMetadataOrderingController"
+                  moduleName = "Blog Nerd Ranch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alecs/Desktop/BNR/bnr-blog-nerd-ranch-challenge-challenge/Blog%20Nerd%20Ranch/Controllers/PostMetadataCollectionViewController.swift"
+                  timestampString = "559502345.4647731"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Blog_Nerd_Ranch.PostMetadataCollectionViewController.orderingController.setter : Blog_Nerd_Ranch.PostMetadataOrderingController"
+                  moduleName = "Blog Nerd Ranch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alecs/Desktop/BNR/bnr-blog-nerd-ranch-challenge-challenge/Blog%20Nerd%20Ranch/Controllers/PostMetadataCollectionViewController.swift"
+                  timestampString = "559502345.467424"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Blog_Nerd_Ranch.PostMetadataCollectionViewController.init(collectionViewLayout: __C.UICollectionViewLayout) -&gt; Blog_Nerd_Ranch.PostMetadataCollectionViewController"
+                  moduleName = "Blog Nerd Ranch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alecs/Desktop/BNR/bnr-blog-nerd-ranch-challenge-challenge/Blog%20Nerd%20Ranch/Controllers/PostMetadataCollectionViewController.swift"
+                  timestampString = "559502345.469823"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "302">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Blog_Nerd_Ranch.PostMetadataCollectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Blog_Nerd_Ranch.PostMetadataCollectionViewController"
+                  moduleName = "Blog Nerd Ranch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alecs/Desktop/BNR/bnr-blog-nerd-ranch-challenge-challenge/Blog%20Nerd%20Ranch/Controllers/PostMetadataCollectionViewController.swift"
+                  timestampString = "559502345.472114"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "268">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Blog_Nerd_Ranch.PostMetadataCollectionViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Blog_Nerd_Ranch.PostMetadataCollectionViewController&gt;"
+                  moduleName = "Blog Nerd Ranch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alecs/Desktop/BNR/bnr-blog-nerd-ranch-challenge-challenge/Blog%20Nerd%20Ranch/Controllers/PostMetadataCollectionViewController.swift"
+                  timestampString = "559502345.474631"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "246">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
+            timestampString = "559506998.155095"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -37,5 +37,5 @@ class Blog_Nerd_RanchUITests: XCTestCase {
         
         XCTAssertEqual(titleText, postDetailTitle)
     }
-    
+
 }

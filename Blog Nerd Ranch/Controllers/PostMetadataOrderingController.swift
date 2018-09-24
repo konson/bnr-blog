@@ -33,8 +33,9 @@ class PostMetadataOrderingController {
     //TODO: Fix - why is this firing so many times?
     var groups : [PostMetadataGroup] {
 
-//        print("Inside groups:\(self.ordering.debugDescription)")
+        print("Inside groups:\(self.ordering.debugDescription)")
         
+        // sort the posts array
         var sortedList = postMetadataList // set default if no group is selected
         switch ordering.sorting {
         case .alphabeticalByAuthor(let ascending):
@@ -45,6 +46,7 @@ class PostMetadataOrderingController {
             sortedList = recentFirst ? self.postMetadataList.sorted() { $0.publishDate > $1.publishDate } : self.postMetadataList.sorted() { $0.publishDate < $1.publishDate }
         }
 
+        // generate a dictionary from posts array and group by the selected group type
         var dictionary = Dictionary<String, [PostMetadata]>()
         var postMetadataGroupArray = [PostMetadataGroup]()
         
@@ -52,11 +54,13 @@ class PostMetadataOrderingController {
         case .byAuthor:
             dictionary = Dictionary(grouping: sortedList, by: { (post: PostMetadata) in return post.author.name })
         case .byMonth:
-            dictionary = Dictionary(grouping: sortedList, by: { (post: PostMetadata) in return post.month })
+            dictionary = Dictionary(grouping: sortedList, by: { (post: PostMetadata) in return post.monthString
+            })
         case .none:
             dictionary["Posts"] = sortedList
         }
         
+        // order the grouped dictionary by selected sorting type
         for (group, posts) in dictionary {
             postMetadataGroupArray.append(PostMetadataGroup(name: group, postMetadata: posts))
             switch ordering.sorting {
@@ -65,12 +69,10 @@ class PostMetadataOrderingController {
             case .alphabeticalByTitle(let ascending):
                 postMetadataGroupArray = ascending ? postMetadataGroupArray.sorted() { $0.name < $1.name } : postMetadataGroupArray.sorted() { $0.name > $1.name }
             case .byPublishDate(let recentFirst):
-                // must sort by date
-                print("Need to sort groups by date")
+                //TODO: Sort properly by month. Currently a String but should sort by Date.
+                postMetadataGroupArray = recentFirst ? postMetadataGroupArray.sorted() { $0.name < $1.name } : postMetadataGroupArray.sorted() { $0.name > $1.name }
             }
         }
-
         return postMetadataGroupArray
-
     }
 }

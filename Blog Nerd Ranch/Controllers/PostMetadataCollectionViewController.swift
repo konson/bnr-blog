@@ -91,12 +91,14 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
         present(alertController, animated: true, completion: nil)
     }
     
+    // this updates Display Ordering to the new group selection but preserves the sorting selection
     func update(grouping: Grouping) {
         let oldSorting = orderingController.ordering.sorting
         orderingController.ordering = DisplayOrdering(grouping: grouping, sorting: oldSorting)
         collectionView?.reloadData()
     }
     
+    // this updates Display Ordering to the new sorting selection but preserves the grouping selection
     func update(sorting: Sorting) {
         let oldGrouping = orderingController.ordering.grouping
         orderingController.ordering = DisplayOrdering(grouping: oldGrouping, sorting: sorting)
@@ -141,7 +143,8 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                      withReuseIdentifier: "PostHeaderReusableView",
                                                                      for: indexPath) as! PostHeaderReusableView
-        header.sectionHeaderLabel.text = orderingController.groups[indexPath.section].name ?? "Posts"
+        
+        header.sectionHeaderLabel.text = orderingController.groups[indexPath.section].name
 
         return header
     }
