@@ -27,7 +27,7 @@ class PostMetadataOrderingControllerTests: XCTestCase {
         let groups = controller.groups
         
         XCTAssertEqual(groups.count, 1)
-        XCTAssertNil(groups.first?.name)
+        XCTAssertEqual(groups.first?.name, "Posts")
         XCTAssertEqual(groups.first?.postMetadata.count, 0)
     }
 }

@@ -11,5 +11,5 @@ import UIKit
 class PostHeaderReusableView: UICollectionReusableView {
     
     @IBOutlet var sectionHeaderLabel: UILabel!
-    
+ 
 }
