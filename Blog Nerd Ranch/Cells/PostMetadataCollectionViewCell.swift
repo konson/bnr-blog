@@ -37,6 +37,7 @@ class PostMetadataCollectionViewCell: UICollectionViewCell {
                 label.numberOfLines = 0
             }
         }
+        
         // Set accessibility
         titleLabel.accessibilityLabel = "Post Title"
         authorNameLabel.accessibilityLabel = "Author Name"
@@ -72,7 +73,6 @@ class PostMetadataCollectionViewCell: UICollectionViewCell {
                 }
             }
         }
-        
         task.resume()
     }
 }

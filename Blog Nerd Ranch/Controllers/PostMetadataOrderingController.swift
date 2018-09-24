@@ -24,25 +24,16 @@ class PostMetadataOrderingController {
         self.postMetadataList = postMetadata
     }
     
-    //TODO: Refactor, cleanup, and fix this!
+    //TODO: Fix - Sorting with group. When group type and sort type match
+    // not sorting properly. Date sort should sort both group order
+    // and elements inside group
+    
+    //TODO: Fix - why is this firing so many times?
     var groups : [PostMetadataGroup] {
 
         print("\(self.ordering.debugDescription)")
-
-        var dictionary = Dictionary<String, [PostMetadata]>()
-        var postMetadataGroupArray = [PostMetadataGroup]()
         
-        switch ordering.grouping {
-        case .byAuthor:
-            dictionary = Dictionary(grouping: postMetadataList, by: { (post: PostMetadata) in return post.author.name })
-        case .byMonth:
-            dictionary = Dictionary(grouping: postMetadataList, by: { (post: PostMetadata) in return post.month })
-        case .none:
-            print("none!")
-        }
-        
-        // set the sorting array
-        var sortedList: [PostMetadata] = []
+        var sortedList = postMetadataList
         switch ordering.sorting {
         case .alphabeticalByAuthor(let ascending):
             sortedList = ascending ? self.postMetadataList.sorted() { $0.author.name < $1.author.name } : self.postMetadataList.sorted() { $0.author.name > $1.author.name }
@@ -51,13 +42,24 @@ class PostMetadataOrderingController {
         case .byPublishDate(let recentFirst):
             sortedList = recentFirst ? self.postMetadataList.sorted() { $0.publishDate > $1.publishDate } : self.postMetadataList.sorted() { $0.publishDate < $1.publishDate }
         }
+
+        var dictionary = Dictionary<String, [PostMetadata]>()
+        var postMetadataGroupArray = [PostMetadataGroup]()
+        
+        switch ordering.grouping {
+        case .byAuthor:
+            dictionary = Dictionary(grouping: sortedList, by: { (post: PostMetadata) in return post.author.name })
+        case .byMonth:
+            dictionary = Dictionary(grouping: sortedList, by: { (post: PostMetadata) in return post.month })
+        case .none:
+            dictionary["Posts"] = sortedList
+        }
         
         for (key, value) in dictionary {
             postMetadataGroupArray.append(PostMetadataGroup(name: key, postMetadata: value))
         }
 
-        //TODO: Fix this so grouping and sorting work together
-        return postMetadataGroupArray.isEmpty ? [PostMetadataGroup(name: nil, postMetadata: sortedList)] : postMetadataGroupArray
+        return postMetadataGroupArray
 
     }
 }
