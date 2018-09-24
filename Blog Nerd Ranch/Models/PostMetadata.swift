@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct PostMetadata : Codable {
+struct PostMetadata : Codable, Equatable {
+    static func == (lhs: PostMetadata, rhs: PostMetadata) -> Bool {
+        return lhs.postId == rhs.postId
+    }
+    
     let title : String
     let publishDate : Date
     let author: Author

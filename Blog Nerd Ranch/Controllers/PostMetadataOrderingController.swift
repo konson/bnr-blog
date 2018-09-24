@@ -24,10 +24,6 @@ class PostMetadataOrderingController {
         self.postMetadataList = postMetadata
     }
     
-    //TODO: Fix - Sorting with group. When group type and sort type match
-    // not sorting properly. Date sort should sort both group order
-    // and elements inside group
-    
     //TODO: Refactor! In a big way.
     
     //TODO: Fix - why is this firing so many times?
@@ -69,7 +65,7 @@ class PostMetadataOrderingController {
             case .alphabeticalByTitle(let ascending):
                 postMetadataGroupArray = ascending ? postMetadataGroupArray.sorted() { $0.name < $1.name } : postMetadataGroupArray.sorted() { $0.name > $1.name }
             case .byPublishDate(let recentFirst):
-                //TODO: Sort properly by month. Currently a String but should sort by Date.
+                //TODO: Sort properly by month. Currently a String but should sort by Date value.
                 postMetadataGroupArray = recentFirst ? postMetadataGroupArray.sorted() { $0.name < $1.name } : postMetadataGroupArray.sorted() { $0.name > $1.name }
             }
         }
