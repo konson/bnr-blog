@@ -151,11 +151,8 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let postMetadata = orderingController.groups[indexPath.section].postMetadata[indexPath.item]
         
-        let url = server.allPostsUrl
+        let url = server.postUrlFor(id: postMetadata.postId)
 
-        //TODO: optimize this...
-        // Get all posts, filter to the selected post, and then show it
-        // Is there a better way to do this?
         if downloadTask?.progress.isCancellable ?? false {
             downloadTask?.cancel()
         }
@@ -169,19 +166,17 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
                 return
             }
             
-            let posts : [Post]?
+            let post : Post?
             let decoder = JSONDecoder();
             decoder.dateDecodingStrategy = .iso8601
             do {
-                posts = try decoder.decode(Array<Post>.self, from: data)
+                post = try decoder.decode(Post.self, from: data)
             } catch {
                 self?.displayError(error: error)
                 return
             }
             
-            let selectedPost = posts?.first(where: { (post) -> Bool in
-                return post.id == postMetadata.postId
-            })
+            let selectedPost = post
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let postController = storyboard.instantiateViewController(withIdentifier: "PostViewController") as! PostViewController
