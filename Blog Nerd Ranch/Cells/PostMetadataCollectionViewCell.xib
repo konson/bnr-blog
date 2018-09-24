@@ -28,7 +28,7 @@
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="genericProfile" highlightedImage="genericProfile" translatesAutoresizingMaskIntoConstraints="NO" id="ZuE-pG-wp2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="genericProfile" translatesAutoresizingMaskIntoConstraints="NO" id="ZuE-pG-wp2">
                                 <rect key="frame" x="0.0" y="71.5" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="K4f-av-hci"/>

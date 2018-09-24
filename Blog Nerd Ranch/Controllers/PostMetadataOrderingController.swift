@@ -10,7 +10,7 @@ import Foundation
 
 /// Represents a named group of posts. The nature of the group depends on the ordering it was created with
 struct PostMetadataGroup {
-    let name : String?
+    let name : String
     let postMetadata: [PostMetadata]
 }
 
@@ -28,12 +28,14 @@ class PostMetadataOrderingController {
     // not sorting properly. Date sort should sort both group order
     // and elements inside group
     
+    //TODO: Refactor! In a big way.
+    
     //TODO: Fix - why is this firing so many times?
     var groups : [PostMetadataGroup] {
 
-        print("\(self.ordering.debugDescription)")
+//        print("Inside groups:\(self.ordering.debugDescription)")
         
-        var sortedList = postMetadataList
+        var sortedList = postMetadataList // set default if no group is selected
         switch ordering.sorting {
         case .alphabeticalByAuthor(let ascending):
             sortedList = ascending ? self.postMetadataList.sorted() { $0.author.name < $1.author.name } : self.postMetadataList.sorted() { $0.author.name > $1.author.name }
@@ -55,8 +57,17 @@ class PostMetadataOrderingController {
             dictionary["Posts"] = sortedList
         }
         
-        for (key, value) in dictionary {
-            postMetadataGroupArray.append(PostMetadataGroup(name: key, postMetadata: value))
+        for (group, posts) in dictionary {
+            postMetadataGroupArray.append(PostMetadataGroup(name: group, postMetadata: posts))
+            switch ordering.sorting {
+            case .alphabeticalByAuthor(let ascending):
+                postMetadataGroupArray = ascending ? postMetadataGroupArray.sorted() { $0.name < $1.name } : postMetadataGroupArray.sorted() { $0.name > $1.name }
+            case .alphabeticalByTitle(let ascending):
+                postMetadataGroupArray = ascending ? postMetadataGroupArray.sorted() { $0.name < $1.name } : postMetadataGroupArray.sorted() { $0.name > $1.name }
+            case .byPublishDate(let recentFirst):
+                // must sort by date
+                print("Need to sort groups by date")
+            }
         }
 
         return postMetadataGroupArray

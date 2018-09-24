@@ -15,11 +15,12 @@ struct PostMetadata : Codable {
     let summary: String
     let postId : String
     
+    //TODO: Change to return date so sorting will work in
     var month : String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
+        dateFormatter.dateFormat = "MMMM"
         let publishDateString = dateFormatter.string(from: self.publishDate as Date)
-        return String(publishDateString.prefix(3))
+        return publishDateString
     }
 }
 
