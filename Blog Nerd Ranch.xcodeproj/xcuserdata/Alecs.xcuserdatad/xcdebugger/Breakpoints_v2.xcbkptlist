@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
-            timestampString = "559524781.237963"
+            timestampString = "559528229.6985281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
-            timestampString = "559524781.238028"
+            timestampString = "559528229.698952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "fetchPostMetadata()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
-            timestampString = "559524781.2380739"
+            timestampString = "559528229.699259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
             <Locations>
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blog Nerd Ranch/Controllers/PostMetadataOrderingController.swift"
-            timestampString = "559524781.238119"
+            timestampString = "559528229.699535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blog Nerd Ranch/Controllers/PostMetadataOrderingController.swift"
-            timestampString = "559524781.238158"
+            timestampString = "559528229.699581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -122,13 +122,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
-            timestampString = "559524781.2381949"
+            timestampString = "559528229.699621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "update(grouping:)"
-            landmarkType = "7">
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "PostMetadataCollectionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,13 +138,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
-            timestampString = "559524781.238234"
+            timestampString = "559528229.6998791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "update(sorting:)"
-            landmarkType = "7">
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "PostMetadataCollectionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
-            timestampString = "559524781.238276"
+            timestampString = "559528229.7001359"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -247,7 +247,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
-            timestampString = "559524781.238315"
+            timestampString = "559528229.7004"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -279,11 +279,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blog Nerd Ranch/Controllers/PostMetadataCollectionViewController.swift"
-            timestampString = "559524781.2384011"
+            timestampString = "559528229.7007"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -103,6 +103,7 @@
             <connections>
                 <outlet property="authorNameLabel" destination="DHe-DG-waX" id="9K6-CN-756"/>
                 <outlet property="authorTitleLabel" destination="ydf-4s-QyU" id="qT3-nq-2WW"/>
+                <outlet property="cellView" destination="SsC-c4-TzH" id="h5r-Sm-0oe"/>
                 <outlet property="imageView" destination="ZuE-pG-wp2" id="d95-vE-kgC"/>
                 <outlet property="publishDateLabel" destination="i0C-Tt-iFy" id="zqM-eg-hTO"/>
                 <outlet property="summaryLabel" destination="8uX-zQ-KHd" id="gzq-Ie-nHP"/>

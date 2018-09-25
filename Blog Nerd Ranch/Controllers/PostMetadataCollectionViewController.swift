@@ -28,6 +28,9 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
 
         // Register cell classes
         self.collectionView!.register(UINib(nibName: "PostMetadataCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+//        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+//            flowLayout.estimatedItemSize = CGSize(width: 400, height: 270)
+//        }
 
         // Do any additional setup after loading the view.
         title = "Blog Nerd Ranch"
@@ -202,13 +205,13 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         //TODO: Make cell height dynamic to post content
-        
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
         return CGSize(width: widthPerItem, height: 270)
     }
+
     
     // MARK: - Data methods
     func fetchPostMetadata() {
