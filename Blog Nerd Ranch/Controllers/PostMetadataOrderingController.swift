@@ -24,12 +24,8 @@ class PostMetadataOrderingController {
         self.postMetadataList = postMetadata
     }
     
-    //TODO: Refactor! In a big way.
-    
-    //TODO: Fix - why is this firing so many times?
+    //TODO: This could use some refactoring
     var groups : [PostMetadataGroup] {
-
-        print("Inside groups:\(self.ordering.debugDescription)")
         
         // sort the posts array
         var sortedList = postMetadataList // set default if no group is selected
@@ -65,7 +61,6 @@ class PostMetadataOrderingController {
             case .alphabeticalByTitle(let ascending):
                 postMetadataGroupArray = ascending ? postMetadataGroupArray.sorted() { $0.name < $1.name } : postMetadataGroupArray.sorted() { $0.name > $1.name }
             case .byPublishDate(let recentFirst):
-                //TODO: Sort properly by month. Currently a String but should sort by Date value.
                 postMetadataGroupArray = recentFirst ? postMetadataGroupArray.sorted() { $0.name < $1.name } : postMetadataGroupArray.sorted() { $0.name > $1.name }
             }
         }

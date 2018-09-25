@@ -20,7 +20,7 @@ class PostMetadataOrderingControllerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testOrderWithNoPosts() {
+    func testSortWithNoPosts() {
         let ordering = DisplayOrdering(grouping: .none, sorting: .byPublishDate(recentFirst: false))
         
         let controller = PostMetadataOrderingController(ordering: ordering)
@@ -31,15 +31,19 @@ class PostMetadataOrderingControllerTests: XCTestCase {
         XCTAssertEqual(groups.first?.postMetadata.count, 0)
     }
     
-    func testOrderWithPosts() {
+    func testSortPostsChrolonogically() {
         let ordering = DisplayOrdering(grouping: .none, sorting: .byPublishDate(recentFirst: false))
         
-        let date6 = Date(timeInterval: -1000000, since: Date())
-        let date5 = Date(timeInterval: -2000000, since: Date())
-        let date4 = Date(timeInterval: -3000000, since: Date())
-        let date3 = Date(timeInterval: -4000000, since: Date())
-        let date2 = Date(timeInterval: -5000000, since: Date())
-        let date1 = Date(timeInterval: -6000000, since: Date())
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        
+        guard let date1 = formatter.date(from: "Jul 15, 2018"),
+            let date2 = formatter.date(from: "Jul 18, 2018"),
+            let date3 = formatter.date(from: "Aug 1, 2018"),
+            let date4 = formatter.date(from: "Aug 14, 2018"),
+            let date5 = formatter.date(from: "Aug 22, 2018"),
+            let date6 = formatter.date(from: "Aug 30, 2018") else { return }
+
         
         let author1 = Author(name: "Jane One", image: "url", title: "Post Title 1")
         let author2 = Author(name: "Jane Two", image: "url", title: "Post Title 2")
@@ -58,8 +62,11 @@ class PostMetadataOrderingControllerTests: XCTestCase {
         let post4 = PostMetadata(title: "Forth Post", publishDate: date4, author: author2, summary: summary4, postId: "4")
         let post5 = PostMetadata(title: "Fifth Post", publishDate: date5, author: author2, summary: summary5, postId: "5")
         let post6 = PostMetadata(title: "Sixth Post", publishDate: date6, author: author3, summary: summary6, postId: "6")
+
         
-        let postMetadataList = [post1, post2, post3, post4, post5, post6]
+        let testList = [post1, post2, post3, post4, post5, post6]
+        
+        let postMetadataList = [post6, post4, post5, post3, post2, post1]
 
         let controller = PostMetadataOrderingController(ordering: ordering)
         controller.postMetadataList = postMetadataList
@@ -68,60 +75,24 @@ class PostMetadataOrderingControllerTests: XCTestCase {
         
         XCTAssertEqual(groups.count, 1)
         XCTAssertEqual(groups.first?.name, "Posts")
-        XCTAssertEqual(groups.first?.postMetadata.count, postMetadataList.count)
-    }
-    
-    func testOrderChronologically() {
-        let ordering = DisplayOrdering(grouping: .none, sorting: .byPublishDate(recentFirst: false))
-        
-        let date6 = Date(timeInterval: -1000000, since: Date())
-        let date5 = Date(timeInterval: -2000000, since: Date())
-        let date4 = Date(timeInterval: -3000000, since: Date())
-        let date3 = Date(timeInterval: -4000000, since: Date())
-        let date2 = Date(timeInterval: -5000000, since: Date())
-        let date1 = Date(timeInterval: -6000000, since: Date())
-        
-        let author1 = Author(name: "Jane One", image: "url", title: "Post Title 1")
-        let author2 = Author(name: "Jane Two", image: "url", title: "Post Title 2")
-        let author3 = Author(name: "Jane Three", image: "url", title: "Post Title 3")
-        
-        let summary1 = "Lorem Ipsum"
-        let summary2 = "It is a long established fact."
-        let summary3 = "Many desktop publishing."
-        let summary4 = "Standard dummy text ever."
-        let summary5 = "Opposed to using Content here.."
-        let summary6 = "Lorem ipsum will uncover."
-        
-        let post1 = PostMetadata(title: "First Post", publishDate: date1, author: author1, summary: summary1, postId: "1")
-        let post2 = PostMetadata(title: "Second Post", publishDate: date2, author: author1, summary: summary2, postId: "2")
-        let post3 = PostMetadata(title: "Third Post", publishDate: date3, author: author1, summary: summary3, postId: "3")
-        let post4 = PostMetadata(title: "Forth Post", publishDate: date4, author: author2, summary: summary4, postId: "4")
-        let post5 = PostMetadata(title: "Fifth Post", publishDate: date5, author: author2, summary: summary5, postId: "5")
-        let post6 = PostMetadata(title: "Sixth Post", publishDate: date6, author: author3, summary: summary6, postId: "6")
-        
-        let postMetadataList = [post1, post2, post3, post4, post5, post6]
-        
-        let controller = PostMetadataOrderingController(ordering: ordering)
-        controller.postMetadataList = postMetadataList
-        
-        let groups = controller.groups
-        
-        XCTAssertEqual(groups.count, 1)
-        XCTAssertEqual(groups.first?.name, "Posts")
-        XCTAssertEqual(groups.first?.postMetadata, postMetadataList)
-        XCTAssertEqual(groups.first?.postMetadata.count, postMetadataList.count)
+        XCTAssertEqual(groups.first?.postMetadata.count, testList.count)
+        XCTAssertEqual(groups.first?.postMetadata, testList)
 
     }
     
-    func testOrderChronologicallyPosts() {
+    func testSortPostsRecentFirst() {
         let ordering = DisplayOrdering(grouping: .none, sorting: .byPublishDate(recentFirst: true))
         
-        let date6 = Date(timeInterval: -1000000, since: Date())
-        let date5 = Date(timeInterval: -2000000, since: Date())
-        let date4 = Date(timeInterval: -3000000, since: Date())
-        let date3 = Date(timeInterval: -4000000, since: Date())
-        let date2 = Date(timeInterval: -5000000, since: Date())
-        let date1 = Date(timeInterval: -6000000, since: Date())
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        
+        guard let date1 = formatter.date(from: "Jul 15, 2018"),
+            let date2 = formatter.date(from: "Jul 18, 2018"),
+            let date3 = formatter.date(from: "Aug 1, 2018"),
+            let date4 = formatter.date(from: "Aug 14, 2018"),
+            let date5 = formatter.date(from: "Aug 22, 2018"),
+            let date6 = formatter.date(from: "Aug 30, 2018") else { return }
+        
         
         let author1 = Author(name: "Jane One", image: "url", title: "Post Title 1")
         let author2 = Author(name: "Jane Two", image: "url", title: "Post Title 2")
@@ -140,6 +111,56 @@ class PostMetadataOrderingControllerTests: XCTestCase {
         let post4 = PostMetadata(title: "Forth Post", publishDate: date4, author: author2, summary: summary4, postId: "4")
         let post5 = PostMetadata(title: "Fifth Post", publishDate: date5, author: author2, summary: summary5, postId: "5")
         let post6 = PostMetadata(title: "Sixth Post", publishDate: date6, author: author3, summary: summary6, postId: "6")
+        
+        let postMetadataList = [post3, post5, post4, post6, post1, post2]
+        
+        let testList = [post6, post5, post4, post3, post2, post1]
+        
+        let controller = PostMetadataOrderingController(ordering: ordering)
+        controller.postMetadataList = postMetadataList
+        
+        let groups = controller.groups
+        
+        XCTAssertEqual(groups.count, 1)
+        XCTAssertEqual(groups.first?.name, "Posts")
+        XCTAssertEqual(groups.first?.postMetadata, testList)
+        XCTAssertEqual(groups.first?.postMetadata.count, testList.count)
+
+    }
+    
+    func testGroupingPostsByAuthor() {
+        let ordering = DisplayOrdering(grouping: .byAuthor, sorting: .byPublishDate(recentFirst: true))
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        
+        guard let date1 = formatter.date(from: "Jul 15, 2018"),
+            let date2 = formatter.date(from: "Jul 18, 2018"),
+            let date3 = formatter.date(from: "Aug 1, 2018"),
+            let date4 = formatter.date(from: "Aug 14, 2018"),
+            let date5 = formatter.date(from: "Aug 22, 2018"),
+            let date6 = formatter.date(from: "Aug 30, 2018") else { return }
+        
+        
+        let authorAbbeyOne = Author(name: "Abby One", image: "url", title: "Post Title 1")
+        let authorBobTwo = Author(name: "Bob Two", image: "url", title: "Post Title 2")
+        let authorCandiceThree = Author(name: "Candice Three", image: "url", title: "Post Title 3")
+        
+        let authorArray = [authorAbbeyOne, authorBobTwo, authorCandiceThree]
+        
+        let summary1 = "Lorem Ipsum"
+        let summary2 = "It is a long established fact."
+        let summary3 = "Many desktop publishing."
+        let summary4 = "Standard dummy text ever."
+        let summary5 = "Opposed to using Content here.."
+        let summary6 = "Lorem ipsum will uncover."
+        
+        let post1 = PostMetadata(title: "First Post", publishDate: date1, author: authorAbbeyOne, summary: summary1, postId: "1")
+        let post2 = PostMetadata(title: "Second Post", publishDate: date2, author: authorAbbeyOne, summary: summary2, postId: "2")
+        let post3 = PostMetadata(title: "Third Post", publishDate: date3, author: authorAbbeyOne, summary: summary3, postId: "3")
+        let post4 = PostMetadata(title: "Forth Post", publishDate: date4, author: authorBobTwo, summary: summary4, postId: "4")
+        let post5 = PostMetadata(title: "Fifth Post", publishDate: date5, author: authorBobTwo, summary: summary5, postId: "5")
+        let post6 = PostMetadata(title: "Sixth Post", publishDate: date6, author: authorCandiceThree, summary: summary6, postId: "6")
         
         let postMetadataList = [post6, post5, post4, post3, post2, post1]
         
@@ -148,11 +169,54 @@ class PostMetadataOrderingControllerTests: XCTestCase {
         
         let groups = controller.groups
         
-        XCTAssertEqual(groups.count, 1)
-        XCTAssertEqual(groups.first?.name, "Posts")
-        XCTAssertEqual(groups.first?.postMetadata, postMetadataList)
-        XCTAssertEqual(groups.first?.postMetadata.count, postMetadataList.count)
+        XCTAssertEqual(groups.count, authorArray.count)
+        XCTAssertEqual(groups[0].name, authorAbbeyOne.name)
+        XCTAssertEqual(groups[1].name, authorBobTwo.name)
+        XCTAssertEqual(groups[2].name, authorCandiceThree.name)
+    }
+    
+    func testGroupingPostsByMonth() {
+        let ordering = DisplayOrdering(grouping: .byMonth, sorting: .byPublishDate(recentFirst: true))
         
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        
+        guard let date1 = formatter.date(from: "Jul 15, 2018"),
+            let date2 = formatter.date(from: "Jul 18, 2018"),
+            let date3 = formatter.date(from: "Aug 1, 2018"),
+            let date4 = formatter.date(from: "Aug 14, 2018"),
+            let date5 = formatter.date(from: "Aug 22, 2018"),
+            let date6 = formatter.date(from: "Aug 30, 2018") else { return }
+        
+        
+        let authorAbbeyOne = Author(name: "Abby One", image: "url", title: "Post Title 1")
+        let authorBobTwo = Author(name: "Bob Two", image: "url", title: "Post Title 2")
+        let authorCandiceThree = Author(name: "Candice Three", image: "url", title: "Post Title 3")
+                
+        let summary1 = "Lorem Ipsum"
+        let summary2 = "It is a long established fact."
+        let summary3 = "Many desktop publishing."
+        let summary4 = "Standard dummy text ever."
+        let summary5 = "Opposed to using Content here.."
+        let summary6 = "Lorem ipsum will uncover."
+        
+        let post1 = PostMetadata(title: "First Post", publishDate: date1, author: authorAbbeyOne, summary: summary1, postId: "1")
+        let post2 = PostMetadata(title: "Second Post", publishDate: date2, author: authorAbbeyOne, summary: summary2, postId: "2")
+        let post3 = PostMetadata(title: "Third Post", publishDate: date3, author: authorAbbeyOne, summary: summary3, postId: "3")
+        let post4 = PostMetadata(title: "Forth Post", publishDate: date4, author: authorBobTwo, summary: summary4, postId: "4")
+        let post5 = PostMetadata(title: "Fifth Post", publishDate: date5, author: authorBobTwo, summary: summary5, postId: "5")
+        let post6 = PostMetadata(title: "Sixth Post", publishDate: date6, author: authorCandiceThree, summary: summary6, postId: "6")
+        
+        let postMetadataList = [post6, post1, post4, post3, post5, post2]
+        
+        let controller = PostMetadataOrderingController(ordering: ordering)
+        controller.postMetadataList = postMetadataList
+        
+        let groups = controller.groups
+        
+        XCTAssertEqual(groups.count, 2)
+        XCTAssertEqual(groups[0].name, "August")
+        XCTAssertEqual(groups[1].name, "July")
     }
     
 }

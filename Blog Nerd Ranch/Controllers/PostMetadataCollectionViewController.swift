@@ -203,8 +203,7 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
         return sectionInsets
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        //TODO: Make cell height dynamic to post content
+
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
