@@ -22,7 +22,7 @@
                     <view contentMode="scaleToFill" restorationIdentifier="PostMetadataCollectionViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="SsC-c4-TzH">
                         <rect key="frame" x="8" y="8" width="535" height="272"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title Could Be a Super Long One So Better Make It Two Lines" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDz-G2-7YS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title Could Be a Super Long One So Better Make It Multi- Lined" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDz-G2-7YS">
                                 <rect key="frame" x="0.0" y="0.0" width="535" height="63.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
