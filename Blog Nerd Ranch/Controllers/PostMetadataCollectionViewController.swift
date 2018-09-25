@@ -28,9 +28,6 @@ class PostMetadataCollectionViewController: UICollectionViewController, UICollec
 
         // Register cell classes
         self.collectionView!.register(UINib(nibName: "PostMetadataCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-//        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-//            flowLayout.estimatedItemSize = CGSize(width: 400, height: 270)
-//        }
 
         // Do any additional setup after loading the view.
         title = "Blog Nerd Ranch"

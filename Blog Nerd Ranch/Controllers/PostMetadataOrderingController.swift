@@ -46,8 +46,7 @@ class PostMetadataOrderingController {
         case .byAuthor:
             dictionary = Dictionary(grouping: sortedList, by: { (post: PostMetadata) in return post.author.name })
         case .byMonth:
-            dictionary = Dictionary(grouping: sortedList, by: { (post: PostMetadata) in return post.monthString
-            })
+            dictionary = Dictionary(grouping: sortedList, by: { (post: PostMetadata) in return post.monthString })
         case .none:
             dictionary["Posts"] = sortedList
         }
